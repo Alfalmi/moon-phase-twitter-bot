@@ -15,18 +15,18 @@ moon.save_to_disk('moon')
 
 # KEYS
 
-"""
+
 CONSUMER_KEY = 'XUAGz64NEy6deSYf4eOrTEXs0' #environ['CONSUMER_KEY']
 CONSUMER_SECRET = 'ujFaK0wnEQ8WWq7d4BH6A9WWYB4ORPynWDGHAnvYFCI5boxN9J' # environ['CONSUMER_SECRET']
 ACCESS_KEY = '1356366441612599297-JTOlqpQIGIKJkI3UpP5jGEGiR9YNFc' # environ['ACCESS_KEY']
 ACCESS_SECRET = '5ql6FmYG6YIq9qe94PvRUO66sbKrD93jaKZcJWkxXJPrb' # environ['ACCESS_SECRET']
-"""
 
+"""
 CONSUMER_KEY = environ['CONSUMER_KEY']
 CONSUMER_SECRET = environ['CONSUMER_SECRET']
 ACCESS_KEY = environ['ACCESS_KEY']
 ACCESS_SECRET = environ['ACCESS_SECRET']
-
+"""
 # AUTH
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY , CONSUMER_SECRET)
@@ -48,10 +48,15 @@ distance = moon.moon_datetime_info['distance']
 earth_distance = round(distance/12742, 1)
 message = 'Phase: '+ str(phase)+ '%' + '\nAge: '+ str(age) + ' days\nDiameter: '+ str(diameter) + ' arcseconds\nDistance: '+ str(distance) + ' km (' + str(earth_distance) + ' Earth diameters)'
 
-
-
+"""
+# follow everyone who follow me
+for follower in tweepy.Cursor(api.followers).items():
+        follower.follow()
+        print("Followed everyone that is following " + user.name)
+"""
+"""
 # Main Loop
 while True:
         api.update_with_media(img_url, status=message)
         time.sleep(60*60*24)
-        
+"""
