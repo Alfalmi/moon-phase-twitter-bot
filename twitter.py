@@ -6,7 +6,7 @@ import time
 from os import environ
 from moon.terminal_ui import TerminalUi
 from moon.dialamoon import Moon
-import tweepyimport Tkinter
+
 
 moon = Moon()
 moon.set_moon_phase()
@@ -15,10 +15,17 @@ moon.save_to_disk('moon')
 
 # KEYS
 
+"""
 CONSUMER_KEY = 'XUAGz64NEy6deSYf4eOrTEXs0' #environ['CONSUMER_KEY']
 CONSUMER_SECRET = 'ujFaK0wnEQ8WWq7d4BH6A9WWYB4ORPynWDGHAnvYFCI5boxN9J' # environ['CONSUMER_SECRET']
 ACCESS_KEY = '1356366441612599297-JTOlqpQIGIKJkI3UpP5jGEGiR9YNFc' # environ['ACCESS_KEY']
 ACCESS_SECRET = '5ql6FmYG6YIq9qe94PvRUO66sbKrD93jaKZcJWkxXJPrb' # environ['ACCESS_SECRET']
+"""
+
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
 # AUTH
 
