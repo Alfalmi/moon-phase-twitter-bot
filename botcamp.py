@@ -122,6 +122,7 @@ def mainFunction():
                 #Favorite
                 tweet.favorite()
                 print('Favorited the tweet')
+                time.sleep(1)
 
             except tweepy.TweepError as e:
                 print(e.reason)
@@ -135,13 +136,16 @@ def mainFunction():
                 #Follow
                 tweet.user.follow()
                 print('Followed the user')
+                time.sleep(3)
+               
 
             except tweepy.TweepError as e:
                 print(e.reason)
 
             except StopIteration:
                 break
-
+            
+    
 
 submit = Button(root, text="Submit", command=mainFunction, bg="Cyan")
 
